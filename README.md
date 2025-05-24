@@ -1,0 +1,1 @@
+# alsadiq-properties
