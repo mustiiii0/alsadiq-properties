@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الصادق للعقارات</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin: 0;
+      direction: rtl;
+      text-align: right;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      text-align: right;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .property-list {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .property {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 20px;
+      flex-direction: row-reverse;
+    }
+    .property img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .property-details {
+      flex: 1;
+    }
+    .property-details h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>الصادق للعقارات</h1>
+  <form id="propertyForm">
+    <label for="type">نوع العقار</label>
+    <select id="type" required>
+      <option value="بيت">بيت</option>
+      <option value="شقة">شقة</option>
+      <option value="أرض">أرض</option>
+      <option value="كوخ">كوخ</option>
+    </select>
+
+    <label for="address">العنوان</label>
+    <input type="text" id="address" required />
+
+    <label for="price">السعر (كرونة)</label>
+    <input type="number" id="price" required />
+
+    <label for="description">الوصف</label>
+    <textarea id="description" rows="4" required></textarea>
+
+    <label for="image">تحميل صورة</label>
+    <input type="file" id="image" accept="image/*" required />
+
+    <button type="submit">نشر العقار</button>
+  </form>
+
+  <h2>العقارات المنشورة</h2>
+  <div class="property-list" id="propertyList"></div>
+
+  <script>
+    const form = document.getElementById("propertyForm");
+    const propertyList = document.getElementById("propertyList");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const type = document.getElementById("type").value;
+      const address = document.getElementById("address").value;
+      const price = document.getElementById("price").value;
+      const description = document.getElementById("description").value;
+      const imageInput = document.getElementById("image");
+
+      const file = imageInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function () {
+        const imageUrl = reader.result;
+
+        const propertyDiv = document.createElement("div");
+        propertyDiv.classList.add("property");
+
+        propertyDiv.innerHTML = `
+          <img src="${imageUrl}" alt="صورة للعقار" />
+          <div class="property-details">
+            <h3>${type} – ${address}</h3>
+            <p><strong>السعر:</strong> ${price} كرونة</p>
+            <p>${description}</p>
+          </div>
+        `;
+
+        propertyList.prepend(propertyDiv);
+        form.reset();
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
+
+</body>
+</html>
