@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الصادق للعقارات | Al Sadiq Real Estate</title>
-  <link rel="icon" type="image/png" href="alsadiq-favicon-32x32.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصادق للعقارات | Al Sadiq Properties</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
   <style>
-    :root {
-      --bg: #ffffff;
-      --primary: #2e7594;
-      --text: #333;
-      --accent: #a36c72;
-      --muted: #888;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+      background: #f6f4f1;
+      color: #222;
     }
 
     header {
@@ -27,99 +18,154 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .logo img {
-      height: 50px;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
     }
 
     nav a {
-      margin-left: 15px;
+      margin: 0 10px;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
+      color: #444;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: #2e7594;
     }
 
     .hero {
-      text-align: center;
-      padding: 80px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      padding: 40px 20px;
+      align-items: center;
     }
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 900px;
+    .hero img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
       margin: auto;
     }
 
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: var(--primary);
+    .hero-text {
+      flex: 1;
+      padding: 20px;
     }
 
-    .footer {
+    .hero-text h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .properties {
       padding: 40px 20px;
+      background: #fafafa;
+    }
+
+    .properties h2 {
       text-align: center;
-      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card-body p {
+      margin: 0;
       font-size: 14px;
-      border-top: 1px solid #eee;
+      color: #777;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">
-      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Real Estate">
+      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Logo" height="50" />
     </div>
     <nav>
-      <a href="#about">من نحن</a>
+      <a href="#">الرئيسية</a>
       <a href="properties.html">العقارات</a>
-      <a href="nytt-objekt.html">إضافة عقار</a>
+      <a href="sell.html">بيع عقار</a>
       <a href="#contact">اتصل بنا</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>مرحباً بكم في الصادق للعقارات</h1>
-    <p>نحن نربطك بمكانك المثالي بثقة وشفافية</p>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Hero Property" />
+    <div class="hero-text">
+      <h1>اكتشف عقارك المثالي مع الصادق</h1>
+      <p>نحن نربطك بأجمل البيوت والأراضي في السويد بثقة وأناقة.</p>
+    </div>
   </section>
 
-  <section class="section" id="about">
-    <h2>من نحن</h2>
-    <p>الصادق للعقارات هي شركة متخصصة في بيع وشراء وتأجير العقارات داخل السويد. نعمل بخبرة وشفافية عالية لتقديم أفضل الخدمات لعملائنا.</p>
+  <section class="properties">
+    <h2>عقارات مميزة</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?house" alt="property1" />
+        <div class="card-body">
+          <h3>فيلا عصرية - ستوكهولم</h3>
+          <p>3,500,000 كرونة - 240 م²</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?apartment" alt="property2" />
+        <div class="card-body">
+          <h3>شقة مركزية - يوتبوري</h3>
+          <p>1,850,000 كرونة - 85 م²</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?land" alt="property3" />
+        <div class="card-body">
+          <h3>أرض بناء - مالمو</h3>
+          <p>970,000 كرونة - 600 م²</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>هل ترغب في بيع عقارك؟</h2>
-    <p>نحن نقدم خدمة احترافية لتسويق عقارك والوصول إلى المشترين المناسبين. تواصل معنا اليوم لبدء العملية.</p>
-    <p><a href="nytt-objekt.html" style="color: var(--accent); text-decoration: underline;">إضافة عقار جديد</a></p>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>اتصل بنا</h2>
-    <p>الهاتف: 0700-123456<br>
-       البريد الإلكتروني: info@alsadiq.se</p>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 الصادق للعقارات | Al Sadiq Real Estate. جميع الحقوق محفوظة.
-  </div>
-
+  <footer>
+    &copy; 2025 الصادق للعقارات | Al Sadiq Properties. جميع الحقوق محفوظة.
+  </footer>
 </body>
 </html>
