@@ -4,80 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الصادق للعقارات | Al Sadiq Properties</title>
-  <link rel="icon" href="alsadiq-favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
   <style>
-    :root {
-      --bg: #f5f3ef;
-      --text: #222;
-      --primary: #2e7594;
-      --muted: #777;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Cairo', sans-serif;
+      background: #fdfcfb;
+      color: #222;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: white;
+      text-align: center;
+      background: #ffffff;
+      padding: 40px 20px 20px;
+      border-bottom: 2px solid #c3bebe;
     }
 
     .logo img {
-      height: 50px;
+      height: 180px;
+    }
+
+    nav {
+      margin-top: 20px;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 12px;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
+      color: #2e7594;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: #a36c72;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      align-items: center;
-      padding: 60px 40px;
-      gap: 40px;
-      background: white;
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+      background-attachment: fixed;
     }
 
-    .hero img {
-      width: 100%;
-      border-radius: 8px;
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    .hero-text h1 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .hero-text p {
-      color: var(--muted);
-      font-size: 16px;
+    .hero p {
+      font-size: 20px;
     }
 
     .section {
-      padding: 60px 40px;
-      max-width: 1200px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .section h2 {
-      font-size: 26px;
+      text-align: center;
       margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
+      font-size: 28px;
+      color: #2e7594;
     }
 
     .grid {
@@ -86,94 +76,90 @@
       gap: 20px;
     }
 
-    .property-card {
-      background: white;
+    .card {
+      background: #fff;
       border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .property-card img {
+    .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
-    .property-card .info {
+    .card-body {
       padding: 15px;
     }
 
-    .property-card h3 {
-      margin: 0 0 5px;
-      font-size: 18px;
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
     }
 
-    .property-card p {
-      font-size: 14px;
-      color: var(--muted);
+    .card-body p {
+      margin: 0;
+      font-size: 16px;
+      color: #444;
     }
 
     footer {
+      background: #2e7594;
+      color: #fff;
       text-align: center;
-      padding: 40px;
-      background: white;
+      padding: 30px 20px;
       font-size: 14px;
-      color: var(--muted);
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">
-      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Properties">
+      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Logo">
     </div>
     <nav>
-      <a href="index.html">الرئيسية</a>
+      <a href="#">الرئيسية</a>
       <a href="properties.html">العقارات</a>
-      <a href="sell.html">بيع عقارك</a>
-      <a href="#contact">اتصل بنا</a>
+      <a href="sell.html">بيع عقار</a>
+      <a href="#contact">تواصل معنا</a>
     </nav>
   </header>
 
   <section class="hero">
-    <img src="https://source.unsplash.com/800x600/?villa,interior" alt="featured home">
-    <div class="hero-text">
-      <h1>Sea Meets Sky</h1>
-      <p>ملاذ معاصر على الكثبان الرملية لشاطئ كامبر في الساحل الشرقي</p>
-    </div>
+    <h1>مع الصادق للعقارات</h1>
+    <p>ابحث عن منزلك المثالي في سوريا بثقة وخبرة</p>
   </section>
 
   <section class="section">
-    <h2>العقارات المميزة</h2>
+    <h2>عقارات مختارة</h2>
     <div class="grid">
-      <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?house">
-        <div class="info">
-          <h3>فيلا في ستوكهولم</h3>
-          <p>3,500,000 كرونة</p>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?house" alt="فيلا دمشق">
+        <div class="card-body">
+          <h3>فيلا فاخرة في دمشق</h3>
+          <p>السعر: 850,000,000 ل.س - المساحة: 400 م²</p>
         </div>
       </div>
-      <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?apartment">
-        <div class="info">
-          <h3>شقة في يوتبوري</h3>
-          <p>1,850,000 كرونة</p>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?apartment" alt="شقة حلب">
+        <div class="card-body">
+          <h3>شقة حديثة في حلب</h3>
+          <p>السعر: 320,000,000 ل.س - المساحة: 120 م²</p>
         </div>
       </div>
-      <div class="property-card">
-        <img src="https://source.unsplash.com/400x300/?land">
-        <div class="info">
-          <h3>أرض للبناء في مالمو</h3>
-          <p>970,000 كرونة</p>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?land" alt="أرض في اللاذقية">
+        <div class="card-body">
+          <h3>أرض استثمارية في اللاذقية</h3>
+          <p>السعر: 500,000,000 ل.س - المساحة: 1000 م²</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 الصادق للعقارات | Al Sadiq Properties. جميع الحقوق محفوظة.
+    &copy; 2025 الصادق للعقارات | Al Sadiq Properties - جميع الحقوق محفوظة.
   </footer>
-
 </body>
 </html>
