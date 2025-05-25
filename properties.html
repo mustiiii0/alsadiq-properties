@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>العقارات المعروضة | الصادق للعقارات</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 10px;
+      color: #2c3e50;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .card-body p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .price {
+      color: #28a745;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">الصادق للعقارات</div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="properties.html">العقارات</a>
+      <a href="#">من نحن</a>
+      <a href="#">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <h1>العقارات المعروضة</h1>
+
+  <div class="grid">
+
+    <!-- Objekt 1 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?house" alt="عقار">
+      <div class="card-body">
+        <h3>فيلا حديثة في ستوكهولم</h3>
+        <p class="price">3,500,000 كرونة</p>
+        <p>فيلا فاخرة 5 غرف نوم وحديقة خاصة وموقف سيارات.</p>
+      </div>
+    </div>
+
+    <!-- Objekt 2 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?apartment" alt="عقار">
+      <div class="card-body">
+        <h3>شقة في يوتبوري</h3>
+        <p class="price">1,800,000 كرونة</p>
+        <p>شقة بموقع مركزي، 3 غرف نوم، قريبة من المواصلات.</p>
+      </div>
+    </div>
+
+    <!-- Objekt 3 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?land" alt="عقار">
+      <div class="card-body">
+        <h3>قطعة أرض في مالمو</h3>
+        <p class="price">950,000 كرونة</p>
+        <p>أرض مساحتها 700 م² صالحة للبناء في حي هادئ.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
