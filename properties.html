@@ -1,189 +1,166 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>العقارات المتوفرة | الصادق للعقارات</title>
-  <link rel="icon" type="image/png" href="alsadiq-favicon-32x32.png" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>العقارات | الصادق للعقارات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #edeae3;
-      --blue: #2e7594;
-      --blue-dark: #557288;
-      --text: #333;
-      --accent: #a36c72;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f6f4f1;
+      color: #222;
     }
 
     header {
-      background-color: var(--blue);
-      padding: 15px 20px;
+      background: #ffffff;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      border-bottom: 1px solid #ccc;
     }
 
-    .logo img {
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
+    header .logo img {
+      height: 60px;
     }
 
     nav a {
-      color: white;
+      margin-left: 20px;
       text-decoration: none;
-      background-color: var(--blue-dark);
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
+      color: #2e7594;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: #1a2e3a;
+      color: #a36c72;
     }
 
-    h1 {
+    .hero {
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914') center/cover no-repeat;
+      padding: 100px 20px;
       text-align: center;
-      margin: 30px 0 10px;
-      color: var(--blue);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    .properties {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .card {
-      background-color: white;
-      border-radius: 12px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
     .card-body {
       padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .card-body h3 {
-      font-size: 18px;
-      color: var(--text);
       margin: 0 0 10px;
+      font-size: 20px;
     }
 
     .card-body p {
-      font-size: 14px;
-      margin: 5px 0;
+      margin: 0;
+      color: #555;
     }
 
-    .price {
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    .more {
+    .card-body .btn {
       margin-top: 10px;
       display: inline-block;
-      background-color: var(--blue);
+      background: #2e7594;
       color: white;
+      padding: 8px 14px;
+      border-radius: 4px;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 5px;
       font-size: 14px;
+    }
+
+    .card-body .btn:hover {
+      background: #245a73;
     }
 
     footer {
+      background: #2e7594;
+      color: white;
       text-align: center;
       padding: 20px;
-      font-size: 13px;
-      color: #777;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
-
 <body>
-
   <header>
     <div class="logo">
-      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Real Estate">
+      <img src="Al_Sadiq_Logo.png" alt="Logo">
     </div>
     <nav>
       <a href="index.html">الرئيسية</a>
       <a href="properties.html">العقارات</a>
-      <a href="nytt-objekt.html">إضافة عقار</a>
+      <a href="sell.html">بيع عقار</a>
+      <a href="#">تواصل معنا</a>
     </nav>
   </header>
 
-  <h1>العقارات المعروضة</h1>
+  <section class="hero">
+    <h1>العقارات المعروضة</h1>
+  </section>
 
-  <div class="grid">
-    <!-- Objekt 1 -->
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?house" alt="فيلا في ستوكهولم">
-      <div class="card-body">
-        <h3>فيلا حديثة في ستوكهولم</h3>
-        <p class="price">3,500,000 كرونة</p>
-        <p>المساحة: 240 م²</p>
-        <p>الموقع: ستوكهولم</p>
-        <a href="#" class="more">عرض التفاصيل</a>
+  <section class="properties">
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?villa" alt="فيلا دمشق">
+        <div class="card-body">
+          <h3>فيلا فاخرة في دمشق</h3>
+          <p>850,000,000 ل.س - 400 م²</p>
+          <a href="#" class="btn">عرض التفاصيل</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?apartment" alt="شقة حلب">
+        <div class="card-body">
+          <h3>شقة عصرية في حلب</h3>
+          <p>320,000,000 ل.س - 120 م²</p>
+          <a href="#" class="btn">عرض التفاصيل</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?land" alt="أرض اللاذقية">
+        <div class="card-body">
+          <h3>أرض استثمارية في اللاذقية</h3>
+          <p>500,000,000 ل.س - 1000 م²</p>
+          <a href="#" class="btn">عرض التفاصيل</a>
+        </div>
       </div>
     </div>
-
-    <!-- Objekt 2 -->
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?apartment" alt="شقة">
-      <div class="card-body">
-        <h3>شقة مركزية في يوتبوري</h3>
-        <p class="price">1,850,000 كرونة</p>
-        <p>المساحة: 85 م²</p>
-        <p>الموقع: يوتبوري</p>
-        <a href="#" class="more">عرض التفاصيل</a>
-      </div>
-    </div>
-
-    <!-- Objekt 3 -->
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?land" alt="أرض">
-      <div class="card-body">
-        <h3>قطعة أرض للبناء في مالمو</h3>
-        <p class="price">970,000 كرونة</p>
-        <p>المساحة: 600 م²</p>
-        <p>الموقع: مالمو</p>
-        <a href="#" class="more">عرض التفاصيل</a>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <footer>
-    &copy; 2025 الصادق للعقارات | Al Sadiq Properties. جميع الحقوق محفوظة.
+    &copy; 2025 الصادق للعقارات | Al Sadiq Properties - جميع الحقوق محفوظة.
   </footer>
-
 </body>
 </html>
