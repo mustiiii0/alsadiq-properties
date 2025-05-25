@@ -4,39 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>إضافة عقار جديد | الصادق للعقارات</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: #f9f9f9;
-      padding: 20px;
-      color: #333;
+      background: #f6f4f1;
+      margin: 0;
+      padding: 0;
+      color: #222;
     }
 
-    h1 {
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 70px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2e7594;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #a36c72;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
       text-align: center;
-      margin-bottom: 30px;
+      padding: 80px 20px;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     form {
       background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2e7594;
+      padding-bottom: 5px;
+      font-size: 22px;
+      color: #2e7594;
     }
 
     label {
       display: block;
-      margin: 10px 0 5px;
+      margin: 10px 0 6px;
+      font-weight: 500;
     }
 
     input, select, textarea {
       width: 100%;
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .hidden {
@@ -45,92 +99,173 @@
 
     button {
       background: #2e7594;
-      color: white;
+      color: #fff;
       border: none;
-      padding: 12px 20px;
+      padding: 14px 30px;
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+
+    button:hover {
+      background: #245a73;
+    }
+
+    footer {
+      background: #2e7594;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>إضافة عقار جديد</h1>
-  <form id="propertyForm">
-    <label for="type">نوع العقار</label>
-    <select id="type" name="type" required>
-      <option value="">اختر النوع</option>
-      <option value="house">فيلا / بيت</option>
-      <option value="land">أرض</option>
-      <option value="apartment">شقة</option>
-      <option value="room">غرفة</option>
-      <option value="building">بناء كامل</option>
-      <option value="store">محل تجاري</option>
-    </select>
-
-    <label>تحميل الصور والفيديوهات</label>
-    <input type="file" name="media" accept="image/*,video/*" multiple>
-
-    <label>العنوان</label>
-    <input type="text" name="address" required>
-
-    <label>الطول (متر)</label>
-    <input type="number" name="length" step="0.1">
-
-    <label>العرض (متر)</label>
-    <input type="number" name="width" step="0.1">
-
-    <label>المساحة (متر مربع)</label>
-    <input type="number" name="area" step="1">
-
-    <label>الوصف</label>
-    <textarea name="description" rows="4"></textarea>
-
-    <label>السعر (ل.س)</label>
-    <input type="number" name="price">
-
-    <label>السعر لكل متر (ل.س)</label>
-    <input type="number" name="price_per_m">
-
-    <div id="apartmentFields" class="hidden">
-      <label>الطابق</label>
-      <input type="number" name="floor">
-
-      <label>هل يوجد مصعد؟</label>
-      <select name="elevator">
-        <option value="yes">نعم</option>
-        <option value="no">لا</option>
-      </select>
-
-      <label>هل يوجد شرفة؟</label>
-      <select name="balcony">
-        <option value="yes">نعم</option>
-        <option value="no">لا</option>
-      </select>
+  <header>
+    <div class="logo">
+      <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Logo">
     </div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="properties.html">العقارات</a>
+      <a href="sell.html">بيع عقار</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
 
-    <label>الاسم</label>
-    <input type="text" name="name" required>
+  <section class="hero">
+    <h1>إضافة عقار جديد</h1>
+    <p>شارك تفاصيل العقار الذي تريد بيعه بدقة وسهولة</p>
+  </section>
 
-    <label>رقم الهاتف</label>
-    <input type="tel" name="phone" required>
+  <form id="propertyForm">
+    <section>
+      <h2>نوع العقار</h2>
+      <label for="type">اختر الفئة</label>
+      <select id="type" name="type" required>
+        <option value="">اختر النوع</option>
+        <option value="house">🏠 فيلا / بيت</option>
+        <option value="land">🌍 أرض</option>
+        <option value="apartment">🏢 شقة</option>
+        <option value="room">🛏 غرفة</option>
+        <option value="building">🏗 بناء كامل</option>
+        <option value="store">🏬 محل تجاري</option>
+      </select>
+    </section>
 
-    <label>البريد الإلكتروني (اختياري)</label>
-    <input type="email" name="email">
+    <section>
+      <h2>تفاصيل العقار</h2>
+      <div class="form-grid">
+        <div>
+          <label>تحميل الصور والفيديوهات</label>
+          <input type="file" name="media" accept="image/*,video/*" multiple>
+        </div>
+        <div>
+          <label>العنوان</label>
+          <input type="text" name="address" required>
+        </div>
+        <div>
+          <label>الطول (م)</label>
+          <input type="number" name="length" step="0.1">
+        </div>
+        <div>
+          <label>العرض (م)</label>
+          <input type="number" name="width" step="0.1">
+        </div>
+        <div>
+          <label>المساحة (م²)</label>
+          <input type="number" name="area" step="1">
+        </div>
+        <div>
+          <label>السعر (ل.س)</label>
+          <input type="number" name="price">
+        </div>
+        <div>
+          <label>السعر لكل متر (ل.س)</label>
+          <input type="number" name="price_per_m">
+        </div>
+      </div>
+      <label>الوصف</label>
+      <textarea name="description" rows="4"></textarea>
+    </section>
 
-    <button type="submit">إرسال</button>
+    <section id="apartmentFields" class="hidden">
+      <h2>تفاصيل الشقة</h2>
+      <div class="form-grid">
+        <div>
+          <label>الطابق</label>
+          <input type="number" name="floor">
+        </div>
+        <div>
+          <label>هل يوجد مصعد؟</label>
+          <select name="elevator">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
+        </div>
+        <div>
+          <label>هل يوجد شرفة؟</label>
+          <select name="balcony">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section id="houseFields" class="hidden">
+      <h2>تفاصيل الفيلا / البيت</h2>
+      <div class="form-grid">
+        <div>
+          <label>عدد الطوابق</label>
+          <input type="number" name="villa_floors">
+        </div>
+        <div>
+          <label>هل يوجد حديقة / فناء؟</label>
+          <select name="has_garden">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>معلومات الاتصال</h2>
+      <div class="form-grid">
+        <div>
+          <label>الاسم</label>
+          <input type="text" name="name" required>
+        </div>
+        <div>
+          <label>رقم الهاتف</label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div>
+          <label>البريد الإلكتروني</label>
+          <input type="email" name="email">
+        </div>
+      </div>
+    </section>
+
+    <button type="submit">إرسال العقار</button>
   </form>
+
+  <footer>
+    &copy; 2025 الصادق للعقارات | Al Sadiq Properties - جميع الحقوق محفوظة.
+  </footer>
 
   <script>
     const typeField = document.getElementById('type');
     const apartmentFields = document.getElementById('apartmentFields');
+    const houseFields = document.getElementById('houseFields');
 
     typeField.addEventListener('change', function () {
-      if (this.value === 'apartment') {
-        apartmentFields.classList.remove('hidden');
-      } else {
-        apartmentFields.classList.add('hidden');
-      }
+      apartmentFields.style.display = this.value === 'apartment' ? 'block' : 'none';
+      houseFields.style.display = this.value === 'house' ? 'block' : 'none';
     });
   </script>
 </body>
