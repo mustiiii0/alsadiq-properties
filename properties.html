@@ -66,6 +66,9 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card img {
@@ -131,36 +134,48 @@
   </section>
 
   <section class="properties">
-    <div class="grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?villa" alt="فيلا دمشق">
-        <div class="card-body">
-          <h3>فيلا فاخرة في دمشق</h3>
-          <p>850,000,000 ل.س - 400 م²</p>
-          <a href="#" class="btn">عرض التفاصيل</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?apartment" alt="شقة حلب">
-        <div class="card-body">
-          <h3>شقة عصرية في حلب</h3>
-          <p>320,000,000 ل.س - 120 م²</p>
-          <a href="#" class="btn">عرض التفاصيل</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?land" alt="أرض اللاذقية">
-        <div class="card-body">
-          <h3>أرض استثمارية في اللاذقية</h3>
-          <p>500,000,000 ل.س - 1000 م²</p>
-          <a href="#" class="btn">عرض التفاصيل</a>
-        </div>
-      </div>
+    <div class="grid" id="propertyGrid">
+      <p>جاري تحميل العقارات...</p>
     </div>
   </section>
 
   <footer>
     &copy; 2025 الصادق للعقارات | Al Sadiq Properties - جميع الحقوق محفوظة.
   </footer>
+
+  <script>
+    async function fetchProperties() {
+      const grid = document.getElementById('propertyGrid');
+      grid.innerHTML = '';
+      try {
+        const res = await fetch('load-properties.php');
+        const data = await res.json();
+
+        if (data.length === 0) {
+          grid.innerHTML = '<p>لا توجد عقارات حالياً.</p>';
+          return;
+        }
+
+        data.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <img src="https://source.unsplash.com/400x300/?house" alt="صورة للعقار">
+            <div class="card-body">
+              <h3>${item.address || 'عقار بدون عنوان'}</h3>
+              <p>${item.price || '—'} ل.س - ${item.area || '—'} م²</p>
+              <p>${item.description || ''}</p>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        grid.innerHTML = '<p>حدث خطأ أثناء تحميل البيانات.</p>';
+        console.error(err);
+      }
+    }
+
+    fetchProperties();
+  </script>
 </body>
 </html>
