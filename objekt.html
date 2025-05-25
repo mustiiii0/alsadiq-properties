@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إضافة عقار جديد | الصادق للعقارات</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="alsadiq-favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="alsadiq-favicon-16x16.png" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1a242f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="alsadiq-logotyp.png" alt="Al-Sadiq Properties" />
+    </div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="egenskaper.html">العقارات</a>
+      <a href="nytt-objekt.html">إضافة عقار</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2 style="text-align:center;">إضافة عقار جديد</h2>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+      <label>صور العقار:</label>
+      <input type="text" name="images" required placeholder="رابط الصور أو اسم الملفات" />
+
+      <label>رابط فيديو (إن وجد):</label>
+      <input type="text" name="video" />
+
+      <label>العنوان:</label>
+      <input type="text" name="address" required />
+
+      <label>الطول (متر):</label>
+      <input type="number" name="length" step="0.1" required />
+
+      <label>العرض (متر):</label>
+      <input type="number" name="width" step="0.1" required />
+
+      <label>المساحة (متر²):</label>
+      <input type="number" name="area" step="0.1" required />
+
+      <label>الوصف:</label>
+      <textarea name="description" rows="4" required></textarea>
+
+      <label>السعر الإجمالي (كرونة):</label>
+      <input type="number" name="price" required />
+
+      <label>السعر لكل متر (كرونة):</label>
+      <input type="number" name="price_per_m2" required />
+
+      <label>معلومات التواصل:</label>
+      <textarea name="contact" required></textarea>
+
+      <button type="submit">إرسال العقار</button>
+    </form>
+  </section>
+
+</body>
+</html>
