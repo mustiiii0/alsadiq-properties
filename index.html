@@ -3,37 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الصادق للعقارات | Al Sadiq Properties</title>
+  <title>إضافة عقار جديد | الصادق للعقارات</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
   <style>
     body {
-      margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: #fdfcfb;
+      background: #f6f4f1;
+      margin: 0;
+      padding: 0;
       color: #222;
     }
 
     header {
-      text-align: center;
-      background: #ffffff;
-      padding: 40px 20px 20px;
-      border-bottom: 2px solid #c3bebe;
+      background-color: #ffffff;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .logo img {
-      height: 180px;
-    }
-
-    nav {
-      margin-top: 20px;
+    header .logo img {
+      height: 70px;
     }
 
     nav a {
-      margin: 0 12px;
+      margin-left: 20px;
       text-decoration: none;
       color: #2e7594;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     nav a:hover {
@@ -41,11 +40,10 @@
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914') center/cover no-repeat;
-      color: #fff;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
       text-align: center;
-      padding: 100px 20px;
-      background-attachment: fixed;
+      padding: 80px 20px;
+      color: #fff;
     }
 
     .hero h1 {
@@ -53,63 +51,75 @@
       margin-bottom: 10px;
     }
 
-    .hero p {
-      font-size: 20px;
+    form {
+      background: #fff;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
+    section {
       margin-bottom: 30px;
-      font-size: 28px;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2e7594;
+      padding-bottom: 5px;
+      font-size: 22px;
       color: #2e7594;
     }
 
-    .grid {
+    label {
+      display: block;
+      margin: 10px 0 6px;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      overflow: hidden;
+    .hidden {
+      display: none;
     }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 15px;
-    }
-
-    .card-body h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .card-body p {
-      margin: 0;
+    button {
+      background: #2e7594;
+      color: #fff;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 6px;
       font-size: 16px;
-      color: #444;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+
+    button:hover {
+      background: #245a73;
     }
 
     footer {
       background: #2e7594;
       color: #fff;
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -119,7 +129,7 @@
       <img src="Al_Sadiq_Logo.png" alt="Al Sadiq Logo">
     </div>
     <nav>
-      <a href="#">الرئيسية</a>
+      <a href="index.html">الرئيسية</a>
       <a href="properties.html">العقارات</a>
       <a href="sell.html">بيع عقار</a>
       <a href="#contact">تواصل معنا</a>
@@ -127,39 +137,136 @@
   </header>
 
   <section class="hero">
-    <h1>مع الصادق للعقارات</h1>
-    <p>ابحث عن منزلك المثالي في سوريا بثقة وخبرة</p>
+    <h1>إضافة عقار جديد</h1>
+    <p>شارك تفاصيل العقار الذي تريد بيعه بدقة وسهولة</p>
   </section>
 
-  <section class="section">
-    <h2>عقارات مختارة</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?house" alt="فيلا دمشق">
-        <div class="card-body">
-          <h3>فيلا فاخرة في دمشق</h3>
-          <p>السعر: 850,000,000 ل.س - المساحة: 400 م²</p>
+  <form id="propertyForm">
+    <section>
+      <h2>نوع العقار</h2>
+      <label for="type">اختر الفئة</label>
+      <select id="type" name="type" required>
+        <option value="">اختر النوع</option>
+        <option value="house">🏠 فيلا / بيت</option>
+        <option value="land">🌍 أرض</option>
+        <option value="apartment">🏢 شقة</option>
+        <option value="room">🛏 غرفة</option>
+        <option value="building">🏗 بناء كامل</option>
+        <option value="store">🏬 محل تجاري</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>تفاصيل العقار</h2>
+      <div class="form-grid">
+        <div>
+          <label>تحميل الصور والفيديوهات</label>
+          <input type="file" name="media" accept="image/*,video/*" multiple>
+        </div>
+        <div>
+          <label>العنوان</label>
+          <input type="text" name="address" required>
+        </div>
+        <div>
+          <label>الطول (م)</label>
+          <input type="number" name="length" step="0.1">
+        </div>
+        <div>
+          <label>العرض (م)</label>
+          <input type="number" name="width" step="0.1">
+        </div>
+        <div>
+          <label>المساحة (م²)</label>
+          <input type="number" name="area" step="1">
+        </div>
+        <div>
+          <label>السعر (ل.س)</label>
+          <input type="number" name="price">
+        </div>
+        <div>
+          <label>السعر لكل متر (ل.س)</label>
+          <input type="number" name="price_per_m">
         </div>
       </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?apartment" alt="شقة حلب">
-        <div class="card-body">
-          <h3>شقة حديثة في حلب</h3>
-          <p>السعر: 320,000,000 ل.س - المساحة: 120 م²</p>
+      <label>الوصف</label>
+      <textarea name="description" rows="4"></textarea>
+    </section>
+
+    <section id="apartmentFields" class="hidden">
+      <h2>تفاصيل الشقة</h2>
+      <div class="form-grid">
+        <div>
+          <label>الطابق</label>
+          <input type="number" name="floor">
+        </div>
+        <div>
+          <label>هل يوجد مصعد؟</label>
+          <select name="elevator">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
+        </div>
+        <div>
+          <label>هل يوجد شرفة؟</label>
+          <select name="balcony">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
         </div>
       </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?land" alt="أرض في اللاذقية">
-        <div class="card-body">
-          <h3>أرض استثمارية في اللاذقية</h3>
-          <p>السعر: 500,000,000 ل.س - المساحة: 1000 م²</p>
+    </section>
+
+    <section id="houseFields" class="hidden">
+      <h2>تفاصيل الفيلا / البيت</h2>
+      <div class="form-grid">
+        <div>
+          <label>عدد الطوابق</label>
+          <input type="number" name="villa_floors">
+        </div>
+        <div>
+          <label>هل يوجد حديقة / فناء؟</label>
+          <select name="has_garden">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section>
+      <h2>معلومات الاتصال</h2>
+      <div class="form-grid">
+        <div>
+          <label>الاسم</label>
+          <input type="text" name="name" required>
+        </div>
+        <div>
+          <label>رقم الهاتف</label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div>
+          <label>البريد الإلكتروني</label>
+          <input type="email" name="email">
+        </div>
+      </div>
+    </section>
+
+    <button type="submit">نشر العقار</button>
+  </form>
 
   <footer>
     &copy; 2025 الصادق للعقارات | Al Sadiq Properties - جميع الحقوق محفوظة.
   </footer>
+
+  <script>
+    const typeField = document.getElementById('type');
+    const apartmentFields = document.getElementById('apartmentFields');
+    const houseFields = document.getElementById('houseFields');
+
+    typeField.addEventListener('change', function () {
+      apartmentFields.style.display = this.value === 'apartment' ? 'block' : 'none';
+      houseFields.style.display = this.value === 'house' ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>
